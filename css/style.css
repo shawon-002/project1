@@ -83,7 +83,7 @@ img{
     color: #fff;
     text-transform: capitalize;
 }
-.banner-content h1{
+.banner-heading h1{
     font-size: 150px;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
@@ -92,17 +92,18 @@ img{
     line-height: 140px;
     padding-top: 27px;
     padding-bottom: 140px;
-    /* max-width: 831px; */
+    max-width: 831px;
     position: relative;
+    margin: 0 auto;
 }
-.banner-content h1::after{
+.banner-heading h1::after{
     position: absolute;
     content: '';
     width: 64px;
-    height: 2px;
+    height: 3px;
     background: #fff;
     bottom: 70px;
-    right: 567px;
+    right: 380px;
     transform: translateY(-4px);
     -webkit-transform: translateY(-4px);
     -moz-transform: translateY(-4px);
@@ -190,7 +191,7 @@ img{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(245, 184, 143, .6);
+    background: linear-gradient(30deg, rgba(0,0,0,.9) 0%, rgba(252,227,138,.9) 0%, rgba(243,129,129,.9) 90%);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -221,6 +222,7 @@ img{
 .story-overlay-details i{
     font-size: 24px;
     color: #fff;
+    padding-bottom: 11px;
 }
 .story-overlay-details h4{
     font-size: 32px;
@@ -364,11 +366,33 @@ img{
 .team-main{
     display: flex;
     justify-content: space-between;
-    text-align: center;
 }
-.team-item{
+.team-image{
     width: 382px;
     position: relative;
+}
+.team-overlay-details{
+    display: flex;
+    background-color: #fce38a;
+}
+.team-icon{
+    width: 56px;
+    border-right: 2px solid #f38181;  
+    color: #f38181;
+    padding: 15px 0;
+}
+.team-icon:hover{
+    background-color: #f38181;
+    color: #fff;
+}
+.team-overlay-details i{
+   font-size: 22px; 
+}
+.team-overlay-details h4{
+   font-size: 20px; 
+   color: #fff;
+   text-transform: uppercase;
+   font-family: 'Roboto', serif;
 }
 .team-overlay{
     position: absolute;
@@ -376,7 +400,7 @@ img{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(245, 184, 143, .6);
+    background: linear-gradient(30deg, rgba(0,0,0,.9) 0%, rgba(252,227,138,.9) 0%, rgba(243,129,129,.9) 90%);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -393,7 +417,7 @@ img{
     -ms-transform: scale(0);
     -o-transform: scale(0);
 }
-.team-item:hover .team-overlay{
+.team-image:hover .team-overlay{
     opacity: 1;
     transform: scale(1);
     -webkit-transform: scale(1);
@@ -408,6 +432,7 @@ img{
     color: #333333;
     text-transform: uppercase;
     padding-top: 36px;
+    text-align: center;
 }
 .team-intro p{
     font-family: 'Roboto', sans-serif;
@@ -416,6 +441,7 @@ img{
     font-style: italic;
     color: #999999;
     padding-top: 12px;
+    text-align: center;
 }
 /* work css */
 #work{
@@ -433,12 +459,13 @@ img{
     text-align: center;
     padding-bottom: 100px;
 }
-/* .work-main{
+.work-main{  
     overflow: hidden;
-} */
+    width: 100%;
+}
 .work-item{
     display: flex;
-    width: 480px;
+    width: 25%;
 }
 .item-one{
     display: flex;
@@ -447,6 +474,69 @@ img{
 .item-two{
     display: flex;
     flex-direction: column;
+}
+.item-up,
+.item-down{
+    position: relative;
+}
+.item-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(30deg, rgba(0,0,0,.9) 0%, rgba(252,227,138,.9) 0%, rgba(243,129,129,.9) 90%);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all linear 0.3s;
+    -webkit-transition: all linear 0.3s;
+    -moz-transition: all linear 0.3s;
+    -ms-transition: all linear 0.3s;
+    -o-transition: all linear 0.3s;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+}
+.item-up:hover .item-overlay{
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
+.item-down:hover .item-overlay{
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
+.item-details i{
+    font-size: 24px;
+    color: #fff;
+}
+.item-details h6{
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    padding-top: 19px;
+    padding-bottom: 17px;
+}
+.item-details p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    font-style: italic;
+    color: #fff;
 }
 /* Footer css */
 #footer{
@@ -576,9 +666,13 @@ img{
     font-style: italic;
     color: #dfdfdf;
 }
-.instagram-img{
+.instagram-image{
     padding-top: 39px;
     padding-bottom: 19px;
+}
+.image-box img{
+    padding-bottom: 3px;
+    width: 88px;
 }
 .content{
     font-family: 'Roboto', sans-serif;
